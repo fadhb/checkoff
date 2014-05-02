@@ -1,0 +1,50 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.tasks {
+    table {
+        border-collapse: collapse;
+    }
+    table tr td {
+        padding: 7px;
+        vertical-align: top;
+    }
+    
+    .list_image {
+        width: 75px;
+        heigth: 75px;
+    }
+    
+    .list_description {
+        width: 60%;
+        
+        dl {
+            margin: 0;
+        }
+        
+        dt {
+            color: #244;
+            font-weight: bold;
+            font-size:large;
+        }
+        
+        dd {
+            margin: 0;
+        }
+    }
+    
+    .list_actions {
+        font-size: x-small;
+        text-align: right;
+        padding-left: 1em;
+    }
+    
+    .list_line_even {
+        background: #d6e0fa;
+    }
+    
+    .list_line_odd {
+        background: #f1e2d3;
+    }
+    
+}

@@ -1,0 +1,30 @@
+<h1>List of tasks</h1>
+
+<table>
+<% @tasks.each do |task| %>
+  <tr class= "<%= cycle('list_line_even', 'list_line_odd')%>">
+    <td>
+      <%= image_tag(task.image_url, class: 'list_image') %>
+    </td>
+    <td>
+      <dl>
+        <dt><%= task.title %></dt>
+        <dt><%= truncate(strip_tags(task.description), length:80) %></dt>
+      </dl>
+    </td>
+    <td class="list_actions">
+      <%= link_to 'Show', task %> <br />
+      <%= link_to 'Edit', edit_task_path(task) %><br />
+      <%= link_to 'Delete', task, method: :delete, data: {confirm: "Are you sure you want to delete this item?"} %>
+      
+    </td>
+  </tr>
+  <% end %>
+  
+
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>
+

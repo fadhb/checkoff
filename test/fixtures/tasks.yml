@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  excerpt: MyText
+  image_url: MyString
+  duration: 1
+
+two:
+  title: MyString
+  description: MyText
+  excerpt: MyText
+  image_url: MyString
+  duration: 1
+  
+validtask:
+  title: test task
+  description: description of task
+  excerpt: short description
+  duration: 5
+  image_url: rails.png
