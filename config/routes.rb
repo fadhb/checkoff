@@ -2,6 +2,7 @@ Checkoff::Application.routes.draw do
   get "all_tasks_list/index"
   resources :tasks
 
+  root 'all_tasks_list#index', as: 'TaskChooser'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
