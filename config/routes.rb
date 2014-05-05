@@ -1,4 +1,8 @@
 Checkoff::Application.routes.draw do
+  resources :task_items
+
+  resources :task_lists
+
   get "all_tasks_list/index"
   resources :tasks
 

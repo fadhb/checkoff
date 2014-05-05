@@ -3,20 +3,20 @@
 one:
   title: MyString
   description: MyText
-  excerpt: MyText
+  excerpt: test
   image_url: MyString
-  duration: 1
+  duration: 8
 
 two:
-  title: MyString
+  title: MyOtherString
   description: MyText
-  excerpt: MyText
+  excerpt: test
   image_url: MyString
-  duration: 1
+  duration: 5
   
 validtask:
-  title: test task
-  description: description of task
-  excerpt: short description
+  title: a valid task
+  description: how to do this valid task with good instructions
+  excerpt: how to do the task
+  image_url: railstask.png
   duration: 5
-  image_url: rails.png

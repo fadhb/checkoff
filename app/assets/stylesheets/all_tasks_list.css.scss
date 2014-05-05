@@ -34,9 +34,16 @@
         }
         
         p, div.duration_line {
-            margin-left: 100px;
+            margin-left: 20px;
             margin-top: 0.5em;
             margin-bottom: 0.8em;
+        }
+        
+        p {
+            margin-left: 100px;
+        }
+        form, div {
+            display: inline;
         }
         
         .duration {
