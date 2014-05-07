@@ -18,10 +18,10 @@ class TaskItemsControllerTest < ActionController::TestCase
 
   test "should create task_item" do
     assert_difference('TaskItem.count') do
-      post :create, task_item: { task_id: @task_item.task_id, task_list_id: @task_item.task_list_id }
+      post :create, task_id: tasks(:validtask).id 
     end
 
-    assert_redirected_to task_item_path(assigns(:task_item))
+    assert_redirected_to task_list_path(assigns(:task_item).task_list)
   end
 
   test "should show task_item" do

@@ -1,4 +1,6 @@
 class TaskItemsController < ApplicationController
+  include CurrentTaskList
+  before_action :set_task_list, only: [:create]
   before_action :set_task_item, only: [:show, :edit, :update, :destroy]
 
   # GET /task_items
@@ -24,11 +26,12 @@ class TaskItemsController < ApplicationController
   # POST /task_items
   # POST /task_items.json
   def create
-    @task_item = TaskItem.new(task_item_params)
+    task = Task.find(params[:task_id])
+    @task_item = @task_list.task_items.build(task: task)
 
     respond_to do |format|
       if @task_item.save
-        format.html { redirect_to @task_item, notice: 'Task item was successfully created.' }
+        format.html { redirect_to @task_item.task_list, notice: 'Task item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @task_item }
       else
         format.html { render action: 'new' }

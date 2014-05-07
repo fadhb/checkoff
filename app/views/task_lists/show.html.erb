@@ -1,4 +1,10 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
-<%= link_to 'Edit', edit_task_list_path(@task_list) %> |
-<%= link_to 'Back', task_lists_path %>
+<h2>Your Task List</h2>
+<ul>
+  <% @task_list.task_items.each do |item| %>
+    <li><%= item.task.title %></li>
+  <% end %>
+</ul>
