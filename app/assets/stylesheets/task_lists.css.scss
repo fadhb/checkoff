@@ -1,3 +1,13 @@
 // Place all the styles related to the TaskLists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.task_lists {
+    
+    .total_line {
+        margin-top: 15px;
+    }
+    .total_line .total_cell {
+        font-weight: bold;
+        border-top: 1px solid #595;
+    }
+}

@@ -35,7 +35,7 @@ class TaskItemsControllerTest < ActionController::TestCase
   end
 
   test "should update task_item" do
-    patch :update, id: @task_item, task_item: { task_id: @task_item.task_id, task_list_id: @task_item.task_list_id }
+    patch :update, id: @task_item, task_item: { task_id: @task_item.task_id }
     assert_redirected_to task_item_path(assigns(:task_item))
   end
 

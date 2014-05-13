@@ -3,8 +3,19 @@
 <% end %>
 
 <h2>Your Task List</h2>
-<ul>
+
+
+<table>
   <% @task_list.task_items.each do |item| %>
-    <li><%= item.task.title %></li>
-  <% end %>
-</ul>
+  <tr>
+    <td><%= item.task.title%></td>
+    <td><%= item.task.excerpt %></td>
+    <td><%= item.task.duration %></td>
+  </tr>
+<% end %>
+<tr class="total_line">
+  <td colspan=2>Number of Tasks</td>
+  <td class="total_cell"><%= @task_list.num_of_tasks %></td>
+</tr>
+</table>
+<%= button_to 'Delete Task List', @task_list, method: :delete %>

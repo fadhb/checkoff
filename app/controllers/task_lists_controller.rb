@@ -1,5 +1,6 @@
 class TaskListsController < ApplicationController
   before_action :set_task_list, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_task_list
 
   # GET /task_lists
   # GET /task_lists.json
@@ -70,5 +71,10 @@ class TaskListsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_list_params
       params[:task_list]
+    end
+    
+    def invalid_task_list
+      logger.error "Attempt to access invlid task list #{params[:id]}"
+      redirect_to chooser_url, notice: 'Invalid Task List'
     end
 end
