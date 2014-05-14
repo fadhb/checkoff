@@ -1,0 +1,14 @@
+<h2>Your Task List</h2>
+
+
+<table>
+  
+  <%= render(@task_list.task_items) %>
+  
+<tr class="total_line">
+  <td colspan=2>Number of Tasks</td>
+  <td class="total_cell"><%= @task_list.num_of_tasks %></td>
+</tr>
+</table>
+
+<%= button_to 'Delete Task List', @task_list, method: :delete %>

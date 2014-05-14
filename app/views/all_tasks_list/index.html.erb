@@ -12,7 +12,7 @@
     <p><%= sanitize(task.description) %></p>
     <div class="duration_line">
       <span class="duration"><%= task.duration %></span>
-      <%= button_to 'Add to tasklist', task_items_path(task_id: task) %>
+      <%= button_to 'Add to tasklist', task_items_path(task_id: task), remote: true %>
     </div>
   </div>
 <% end %>  

@@ -1,7 +1,8 @@
 // Place all the styles related to the TaskLists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.task_lists {
+.task_lists, #side #tasklist {
+    color: #fff;
     
     .total_line {
         margin-top: 15px;

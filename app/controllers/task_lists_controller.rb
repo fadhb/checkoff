@@ -54,10 +54,11 @@ class TaskListsController < ApplicationController
 
   # DELETE /task_lists/1
   # DELETE /task_lists/1.json
-  def destroy
-    @task_list.destroy
+  def destroy    
+    @task_list.destroy if @task_list.id == session[:task_list_id]
+    session[:task_list_id] = nil
     respond_to do |format|
-      format.html { redirect_to task_lists_url }
+      format.html { redirect_to chooser_url }
       format.json { head :no_content }
     end
   end

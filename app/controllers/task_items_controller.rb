@@ -27,11 +27,12 @@ class TaskItemsController < ApplicationController
   # POST /task_items.json
   def create
     task = Task.find(params[:task_id])
-    @task_item = @task_list.task_items.build(task: task)
+    @task_item = @task_list.add_task(task.id)
 
     respond_to do |format|
       if @task_item.save
-        format.html { redirect_to @task_item.task_list, notice: 'Task item was successfully created.' }
+        format.html { redirect_to chooser_url }
+        format.js
         format.json { render action: 'show', status: :created, location: @task_item }
       else
         format.html { render action: 'new' }
